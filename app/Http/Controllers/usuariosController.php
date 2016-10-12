@@ -29,6 +29,11 @@ class usuariosController extends Controller
 
     }
 
+    public function perfil($id){
+        $user = pokemons::find($id);
+        return view('consultarPerfil', compact('user'));
+    }
+    
     public function consultar(){
         $pokemons=pokemons::all();
         return view('consultarUsuarios', compact('pokemons'));

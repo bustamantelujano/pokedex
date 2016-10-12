@@ -16,8 +16,6 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-
-	      <img src="{{url('‪C:\Users\alexis\Desktop\Pokeball.png')}}">
 	      <a class="navbar-brand" href="{{url('/home')}}">PM</a>
 	      <a class="navbar-brand" href="{{url('/')}}">Inicio</a>
 	    </div>

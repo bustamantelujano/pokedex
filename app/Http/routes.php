@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/consultarUsuarios', 'usuariosController@consultar');
+
+Route::get('/consultarPerfil', 'usuariosController@perfil');
+
+Route::get('/', 'principalController@index');
+
+Route::get('/home', 'principalController@home');
+
+Route::get('/consultarPerfil/{id}', 'usuariosController@perfil');

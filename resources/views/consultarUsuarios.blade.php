@@ -42,16 +42,14 @@
 					<td>{{$u->capture_rate}}</td>
 					<td>{{$u->generation}}</td>
 					<td>
-						<a href="{{url('/actualizarUsuario')}}/{{$u->id}}" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true">Abrir</span></a>
+						@if($u->id==id)
+						<a href="{{url('/consultarPerfil/{$u}')}}" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true">Abrir</span></a>
 					</td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
 @stop
-
-
-
 
 
 
