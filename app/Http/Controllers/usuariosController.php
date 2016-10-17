@@ -10,6 +10,25 @@ use DB;
 
 class usuariosController extends Controller
 {
+    public function select( $request ){
+        $users = DB::table('pokemons')->where('votes', '>', 100)->get();
+    }
+    public function selectTypes($var){
+        //$pokemons=pokemons::all();
+        //$pokemons = DB::table('pokemons')->where('type1', '>', 100)->get();
+
+        $pokemons = DB::table('pokemons')
+                    ->where('type1', '=', $var)
+                    ->orWhere('type2', $var)
+                    ->get();
+
+        //dd($pokemons);
+
+
+        return view('consultarUsuarios', compact('pokemons'));
+    }
+
+
     public function guardar(Request $request){
     	$nombre=$request->input('nombre');
     	$edad=$request->input('edad');

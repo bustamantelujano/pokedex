@@ -11,7 +11,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>icon</th>
+				<th></th>
 				<th>Nombre</th>
 				<th>Tipo 1</th>
 				<th>Tipo 2</th>
@@ -30,12 +30,13 @@
 					<td>{{$u->id}}</td>
 					<td>
 
-					<img src="images/icons/{{$u->codeicon}}.png" >
+					<img src="http://localhost/pokedex/public/images/icons/{{$u->codeicon}}.png" >
 					
 					</td>
 
 					<td>{{$u->name}}</td>
-					@if($u->type1 == "") <td></td>
+					@if($u->type1 == "") 
+					<td></td>
 					@elseif($u->type1 == 1)
 						<td><a href="#" class="btn btn-dafault">Normal</a></td>
 					@elseif ($u->type1 == 2)
@@ -51,7 +52,7 @@
 					@elseif ($u->type1 == 7)
 						<td><a href="#" class="btn btn-default">Bicho</a></td>
 					@elseif ($u->type1 == 8)
-						<td><a href="#" cl9ass="btn btn-default">Fantasma</a></td>
+						<td><a href="#" class="btn btn-default">Fantasma</a></td>
 					@elseif ($u->type1 == 9)
 						<td><a href="#" class="btn btn-default">Acero</a></td>
 					@elseif ($u->type1 == 10)
@@ -113,9 +114,10 @@
 						<td><a href="#" class="btn btn-default">Desconocido</a></td>
 					@endif	
 
-				<!--	<td>{{$u->envolves_from}} </td> -->
+				@if($u->evolves_from == "")
 				<td></td>
-
+				@else <td>{{$u->evolves_from}} </td>
+				@endif
 					<td>{{$u->height}} Pulgadas</td>
 					<td>{{$u->weight}} Kg</td>
 					<td>{{$u->capture_rate}}</td>

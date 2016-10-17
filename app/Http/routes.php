@@ -17,9 +17,11 @@ Route::get('/', function () {
 
 Route::get('/consultarUsuarios', 'usuariosController@consultar');
 
+Route::get('/consultarUsuarios/{var}', 'usuariosController@selectTypes');
+
 Route::get('/consultarPerfil', 'usuariosController@perfil');
 
-Route::get('/', 'principalController@index');
+Route::get('/', 'principalController@home');
 
 Route::get('/home', 'principalController@home');
 
